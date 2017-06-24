@@ -1,0 +1,29 @@
+{
+  "name": "hana",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
+  },
+  "dependencies": {
+    "@extjs/ext-react": "^6.5.0",
+    "@extjs/reactor": "^1.0.2",
+    "apollo-client": "^1.5.0",
+    "graphql-tag": "^2.4.2",
+    "react": "^15.6.1",
+    "react-apollo": "^1.4.2",
+    "react-dom": "^15.6.1",
+    "react-router-dom": "^4.1.1",
+    "tachyons": "^4.7.4"
+  },
+  "devDependencies": {
+    "@extjs/reactor-babel-plugin": "^1.0.2",
+    "@extjs/reactor-webpack-plugin": "^1.0.3",
+    "node-sass": "^4.5.3",
+    "react-scripts": "1.0.7",
+    "sass-loader": "^6.0.6"
+  }
+}
