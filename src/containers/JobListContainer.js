@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
-import { Row, Col, Glyphicon } from 'react-bootstrap';
+import { Row, Col, ListGroup } from 'react-bootstrap';
 import { graphql } from 'react-apollo';
 import gql from 'graphql-tag';
 import SearchBox from '../components/SearchBox';
@@ -22,15 +21,15 @@ class JobListContainer extends Component {
   }
 
   render() {
-    console.log(this.props);
     return (
       <Row>
         <Col md={4}>
-          <Link to='/create'><Glyphicon glyph="plus" /> New Post</Link>
           <SearchBox />
         </Col>
         <Col md={8}>
-          {this.props.data.loading ? <p>Loading...</p> : this._renderPosts()}
+          <ListGroup>
+            {this.props.data.loading ? <p>Loading...</p> : this._renderPosts()}
+          </ListGroup>
         </Col>
       </Row>
     );

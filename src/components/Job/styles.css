@@ -1,0 +1,8 @@
+.job-container {
+  border: none;
+  border-radius: 0;
+}
+
+.job-container:not(:last-child) {
+  border-bottom: 2px solid var(--pattens-blue);
+}
