@@ -1,0 +1,50 @@
+.header {
+  display: flex;
+  align-items: center;
+  height: 85px;
+  margin-bottom: 50px;
+  padding: 20px 80px;
+  background-color: #FFF;
+  -webkit-box-shadow: 0px 2px 31px -3px rgba(213,213,213,1);
+  -moz-box-shadow: 0px 2px 31px -3px rgba(213,213,213,1);
+  box-shadow: 0px 2px 31px -3px rgba(213,213,213,1);
+}
+
+.logo {
+  margin-top: -10px;
+}
+
+.logo h2 {
+  font-weight: var(--bold);
+  color: #89B8BD;
+}
+
+.logo img {
+  height: 35px;
+  margin-right: 8px;
+  padding-bottom: 3px;
+}
+
+.ais-SearchBox__root {
+  max-width: 100%;
+}
+
+.ais-SearchBox__input {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: var(--light);
+  font-size: 20px;
+  border: none;
+  background-color: #FFF;
+  box-shadow: none;
+}
+
+.account {
+  text-align: right;
+}
+
+.account a {
+  margin-left: 40px;
+  text-decoration: none;
+  font-size: 18px;
+  color: var(--morning-glory);
+}

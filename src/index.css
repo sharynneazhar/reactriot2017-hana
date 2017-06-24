@@ -1,5 +1,29 @@
+/* main stylesheet */
+
+:root {
+  /* Color Palette */
+  --alice-blue: #F5F7FA;
+  --pattens-blue: #DDE9ED;
+  --link-water: #C6D1DA;
+  --link-blue: #D2DDE5;
+  --java: #2AA599;
+  --morning-glory: #9AC2C6;
+
+  /* Font weights */
+  --light: 300;
+  --regular: 400;
+  --semi: 600;
+  --bold: 700;
+}
+
+/* App framework */
 body {
   margin: 0;
   padding: 0;
-  font-family: sans-serif;
+  background-color: var(--alice-blue);
+  font-family: 'Open Sans', sans-serif;
+}
+
+a, a:hover, a:focus, a:active {
+  text-decoration: none;
 }
