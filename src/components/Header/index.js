@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 import { Row, Col, Glyphicon } from 'react-bootstrap';
-import { InstantSearch, SearchBox } from 'react-instantsearch/dom';
+import { SearchBox } from 'react-instantsearch/dom';
 import './styles.css';
 
 class Header extends Component {
@@ -12,22 +13,17 @@ class Header extends Component {
             <a href='/'><h2>Hana</h2></a>
           </div>
         </Col>
-        <Col xs={6} md={7}>
+        <Col xs={6} md={4}>
           <div className="search">
-            <InstantSearch
-              appId="9VES2W8BMD"
-              apiKey="cb6735eba862708a0c1b54369d9e659d"
-              indexName="jobs"
-            >
-              <SearchBox />
-            </InstantSearch>
+            <SearchBox />
           </div>
         </Col>
-        <Col xs={3} md={3}>
+        <Col xs={3} md={6}>
           <div className="account">
-            <a href="/"><Glyphicon glyph="bell" /></a>
-            <a href="/"><Glyphicon glyph="envelope" /></a>
-            <a href="/">Sharynne Azhar</a>
+            <Link to='/create' className="post-job-link"><Glyphicon glyph="plus" />Post a Job</Link>
+            <a href="/"><Glyphicon glyph="bell" />Notifications</a>
+            <a href="/"><Glyphicon glyph="envelope" />Inbox</a>
+            <a href="/"><Glyphicon glyph="user" />Sharynne Azhar</a>
           </div>
         </Col>
       </Row>

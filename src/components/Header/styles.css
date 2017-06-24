@@ -45,6 +45,10 @@
 .account a {
   margin-left: 40px;
   text-decoration: none;
-  font-size: 18px;
-  color: var(--morning-glory);
+  font-size: 14px;
+  color: #888;
+}
+
+.account a .glyphicon {
+  margin-right: 8px;
 }
