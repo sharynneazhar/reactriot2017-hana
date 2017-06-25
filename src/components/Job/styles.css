@@ -1,12 +1,17 @@
 .job-container {
-  padding: 15px;
+  padding: 30px 15px !important;
   border: none;
-  border-radius: 0;
+  border-radius: 0 !important;
   color: #888;
 }
 
+.ais-Hits__root button {
+  border: none !important;
+  border-radius: 0 !important;
+}
+
 .job-container:not(:last-child) {
-  border-bottom: 2px solid var(--pattens-blue);
+  border-bottom: 2px solid var(--pattens-blue) !important;
 }
 
 .job-row {
@@ -14,7 +19,6 @@
   align-items: center;
   font-weight: var(--regular);
   color: #858F92;
-  padding: 20px;
 }
 
 .job-container .col-md-4 {
@@ -23,8 +27,7 @@
 
 .job-container .title,
 .job-container .date,
-.job-container .location,
-.job-container .desc {
+.job-container .location {
   margin-bottom: 20px;
   font-weight: var(--regular);
 }
@@ -37,9 +40,9 @@
   color: #858F92;
 }
 
-.job-container .desc {
-  margin-top: 15px;
+.desc {
   margin-bottom: 0;
+  line-height: 22px;
   font-size: 14px;
 }
 
@@ -64,12 +67,12 @@
 }
 
 .job-container .info {
-  padding: 20px 40px;
+  padding: 10px 40px;
   border-right: 1px solid var(--pattens-blue);
 }
 
 .job-container .compensation .type {
-  margin-bottom: 10px;
+  margin-bottom: 5px;
   font-size: 16px;
   text-transform: capitalize;
 }

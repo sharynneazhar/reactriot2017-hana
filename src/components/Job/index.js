@@ -46,7 +46,7 @@ class Job extends Component {
               maxLine='3'
               ellipsis='...'
               trimRight
-              basedOn='letters'
+              basedOn='words'
             />
           </Col>
           <Col md={4} className="compensation">
