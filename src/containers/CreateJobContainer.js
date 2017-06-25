@@ -20,6 +20,10 @@ class CreateJobContainer extends Component {
         name: '',
         full: ''
       },
+      contact: {
+        phone: '',
+        email: ''
+      },
       pay: 0.00
     }
   }
@@ -51,6 +55,7 @@ class CreateJobContainer extends Component {
       type,
       description,
       location,
+      contact,
       pay
     } = this.state;
 
@@ -59,6 +64,7 @@ class CreateJobContainer extends Component {
       type,
       description,
       location,
+      contact,
       pay
     }).then(() => this.props.history.push('/'));
   }
@@ -128,9 +134,15 @@ class CreateJobContainer extends Component {
             onChange={this._handleChange}
           />
 
-          {this.state.title && this.state.pay && this.state.location &&
-            <button className='pa3 bg-black-10 bn dim ttu pointer' onClick={this._createJob}>Create Job</button>
-          }
+          <ControlLabel>Email</ControlLabel>
+          <input
+            className='w-100 pa3 mv2'
+            type='search'
+            value={this.state.contact.email}
+            onChange={(e) => this.setState({ contact: { email: e.target.value }})}
+          />
+
+          <button className='pa3 bg-black-10 bn dim ttu pointer' onClick={this._createJob}>Create Job</button>
         </div>
       </div>
     );
@@ -143,6 +155,7 @@ const addMutation = gql`
     $type: String!,
     $description: String!,
     $location: Json,
+    $contact: Json
     $pay: Float!
   ) {
     createJob(
@@ -150,6 +163,7 @@ const addMutation = gql`
       type: $type,
       description: $description,
       location: $location,
+      contact: $contact,
       pay: $pay
     ) {
       id
@@ -157,6 +171,7 @@ const addMutation = gql`
       type
       description
       location
+      contact
       pay
     }
   }
@@ -169,6 +184,7 @@ export default graphql(addMutation, {
       type,
       description,
       location,
+      contact,
       pay
     }) =>
       mutate({
@@ -177,6 +193,7 @@ export default graphql(addMutation, {
           type,
           description,
           location,
+          contact,
           pay
         },
       })

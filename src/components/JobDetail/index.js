@@ -35,7 +35,7 @@ class JobDetail extends Component {
               Posted {moment(job.createdAt).fromNow()}
             </div>
           </Col>
-          <Col md={4}>
+          <Col md={9}>
             <div className="location">
               <Glyphicon glyph="map-marker" />
               {this._getLocation()}

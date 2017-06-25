@@ -4,3 +4,10 @@ Need some quick cash for that spanking new PlayStation? Need some help mowing th
 
 ### What is Hana?
 Hana is an on-demand staffing platform for various odd jobs in your local area. We take out the middleman and connect you to directly to a potential hire or employer. Try Hana today!
+
+### Current Issues
+- [ ] Refreshing job detail page breaks it
+
+### Future Development
+- [ ] User Authentication
+- [ ] General Area Map View

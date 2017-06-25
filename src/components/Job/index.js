@@ -15,7 +15,7 @@ class Job extends Component {
     this.props.history.push({    // use push
        pathname: `/job/${job.id}`,
        query: { job }
-     })
+    });
   }
 
   render() {
