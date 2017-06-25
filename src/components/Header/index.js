@@ -15,7 +15,12 @@ class Header extends Component {
         </Col>
         <Col xs={6} md={4}>
           <div className="search">
-            <SearchBox />
+            <SearchBox
+              searchAsYouType
+              translations={{
+                placeholder: 'Search job title, city, and more...',
+              }}
+            />
           </div>
         </Col>
         <Col xs={3} md={6}>

@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Row, Col, ListGroup } from 'react-bootstrap';
 import { graphql } from 'react-apollo';
 import gql from 'graphql-tag';
+import { Hits } from 'react-instantsearch/dom';
 import SearchBox from '../components/SearchBox';
 import Job from '../components/Job';
 
@@ -20,6 +21,8 @@ class JobListContainer extends Component {
     );
   }
 
+  // {this.props.data.loading ? <p>Loading...</p> : this._renderPosts()}
+
   render() {
     return (
       <Row>
@@ -28,7 +31,7 @@ class JobListContainer extends Component {
         </Col>
         <Col md={8}>
           <ListGroup>
-            {this.props.data.loading ? <p>Loading...</p> : this._renderPosts()}
+            <Hits hitComponent={Job} />
           </ListGroup>
         </Col>
       </Row>

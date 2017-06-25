@@ -10,8 +10,8 @@ export default class App extends Component {
       <div className="app">
         <InstantSearch
           appId="9VES2W8BMD"
-          apiKey="cb6735eba862708a0c1b54369d9e659d"
-          indexName="jobs"
+          apiKey="712376043f4586446d61ca7fe28b7aef"
+          indexName="Jobs"
         >
           <Header />
           <div className="container">
