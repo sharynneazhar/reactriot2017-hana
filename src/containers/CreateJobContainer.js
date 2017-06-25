@@ -17,7 +17,8 @@ class CreateJobContainer extends Component {
         country: '',
         lat: '',
         lng: '',
-        name: ''
+        name: '',
+        full: ''
       },
       pay: 0.00
     }
@@ -37,7 +38,8 @@ class CreateJobContainer extends Component {
           country: e.suggestion.country,
           lat: e.suggestion.latlng.lat,
           lng: e.suggestion.latlng.lng,
-          name: e.suggestion.name
+          name: e.suggestion.name,
+          full: e.suggestion.value
         }
       });
     });

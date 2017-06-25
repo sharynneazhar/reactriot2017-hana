@@ -1,0 +1,70 @@
+.job-detail {
+  padding: 40px;
+  background-color: #FFF;
+  -webkit-box-shadow: 0px 2px 31px -3px rgba(213,213,213,1);
+  -moz-box-shadow: 0px 2px 31px -3px rgba(213,213,213,1);
+  box-shadow: 0px 2px 31px -3px rgba(213,213,213,1);
+}
+
+.job-detail .date,
+.job-detail .location,
+.job-detail .desc {
+  margin-bottom: 15px;
+}
+
+.job-detail .job-info {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.job-detail .title {
+  font-size: 32px;
+  text-transform: capitalize;
+  color: #858F92;
+}
+
+.job-detail .pay {
+  font-size: 32px;
+  font-weight: var(--semi);
+  color: var(--java);
+}
+
+
+.job-detail .desc {
+  margin-top: 20px;
+  font-size: 16px;
+}
+
+.job-detail .date,
+.job-detail .location {
+  display: flex;
+  align-items: center;
+}
+
+.job-detail .date .glyphicon,
+.job-detail .location .glyphicon {
+  margin-right: 8px;
+  font-size: 16px;
+}
+
+.job-detail .compensation {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.job-detail .info {
+  padding: 20px;
+  padding-left: 40px;
+  border-right: 1px solid var(--pattens-blue);
+}
+
+.job-detail .compensation .type {
+  margin-bottom: 10px;
+  font-size: 16px;
+  text-transform: capitalize;
+}

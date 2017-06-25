@@ -65,3 +65,8 @@
   line-height: 72px;
   color: var(--java);
 }
+
+a, a:hover, a:focus, a:active {
+  color: #888;
+  text-decoration: none;
+}

@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { withRouter } from 'react-router-dom';
 import { ListGroupItem, Row, Col, Glyphicon } from 'react-bootstrap';
 import moment from 'moment'
 import './styles.css';
@@ -8,11 +9,19 @@ class Job extends Component {
     return this.props.hit ? this.props.hit : this.props.job;
   }
 
+  _getDetail = () => {
+    const job = this._getJobProps();
+    this.props.history.push({    // use push
+       pathname: `/job/${job.id}`,
+       query: { job }
+     })
+  }
+
   render() {
     const job = this._getJobProps();
 
     return (
-      <ListGroupItem className="job-container">
+      <ListGroupItem className="job-container" onClick={this._getDetail}>
         <Row>
           <Col md={8} className="info">
             <div className="title">{job.title}</div>
@@ -42,4 +51,4 @@ class Job extends Component {
   }
 }
 
-export default Job;
+export default withRouter(Job);
