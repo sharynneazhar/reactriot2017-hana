@@ -1,8 +1,36 @@
 .job-container {
+  padding: 50px;
   border: none;
   border-radius: 0;
+  color: #888;
 }
 
 .job-container:not(:last-child) {
   border-bottom: 2px solid var(--pattens-blue);
+}
+
+.job-container .title,
+.job-container .date,
+.job-container .location,
+.job-container .desc,
+.job-container .compensation {
+  margin-bottom: 15px;
+}
+
+.job-container .title {
+  font-size: 20px;
+  text-transform: capitalize;
+  color: #858F92;
+}
+
+.job-container .date,
+.job-container .location {
+  display: flex;
+  align-items: center;
+}
+
+.job-container .date .glyphicon,
+.job-container .location .glyphicon {
+  margin-right: 6px;
+  font-size: 16px;
 }
