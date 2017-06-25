@@ -22,7 +22,10 @@ class JobDetail extends Component {
       <div className="job-detail">
         <div className="job-info">
           <div className="title">{job.title}</div>
-          <div className="pay">${job.pay}</div>
+          <div>
+            <div className="type">{job.type}</div>
+            <div className="pay">${job.pay.toFixed(2)}</div>
+          </div>
         </div>
         <hr />
         <Row>

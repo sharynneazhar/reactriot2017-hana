@@ -15,22 +15,26 @@
 .job-detail .job-info {
   display: flex;
   flex-direction: row;
-  align-items: center;
+  align-items: flex-end;
   justify-content: space-between;
 }
 
 .job-detail .title {
-  font-size: 32px;
+  font-size: 36px;
   text-transform: capitalize;
   color: #858F92;
 }
 
 .job-detail .pay {
-  font-size: 32px;
+  font-size: 30px;
   font-weight: var(--semi);
   color: var(--java);
 }
 
+.job-detail .type {
+  font-size: 14px;
+  text-transform: capitalize;
+}
 
 .job-detail .desc {
   margin-top: 20px;
@@ -49,22 +53,8 @@
   font-size: 16px;
 }
 
-.job-detail .compensation {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  padding: 20px;
-}
-
 .job-detail .info {
   padding: 20px;
   padding-left: 40px;
   border-right: 1px solid var(--pattens-blue);
-}
-
-.job-detail .compensation .type {
-  margin-bottom: 10px;
-  font-size: 16px;
-  text-transform: capitalize;
 }
