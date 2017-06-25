@@ -15,6 +15,7 @@ class Job extends Component {
         <h4>{job.title}</h4>
         <p>{job.createdAt}</p>
         <p>{job.description}</p>
+        <p>{job.location ? job.location.name : 'Contact job poster for location.'}</p>
         <p>{job.compensation}</p>
       </ListGroupItem>
     );

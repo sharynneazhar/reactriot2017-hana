@@ -21,8 +21,6 @@ class JobListContainer extends Component {
     );
   }
 
-  // {this.props.data.loading ? <p>Loading...</p> : this._renderPosts()}
-
   render() {
     return (
       <Row>
@@ -45,6 +43,7 @@ const JobQuery = gql`query job {
     id
     createdAt
     updatedAt
+    location
     compensation
     description
     title

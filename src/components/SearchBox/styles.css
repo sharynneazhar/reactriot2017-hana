@@ -19,7 +19,7 @@
   font-size: 18px;
 }
 
-.search-section .input-box {
+.search-section .ais-SearchBox__input {
   width: 100%;
   padding: 8px 0;
   outline: 0;
@@ -28,4 +28,8 @@
   font-size: 16px;
   font-family: 'Open Sans', sans-serif;
   color: #A2A2A2;
+}
+
+.search-section .ais-SearchBox__submit {
+  display: none;
 }
