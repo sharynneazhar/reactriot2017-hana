@@ -44,9 +44,10 @@ const JobQuery = gql`query job {
     createdAt
     updatedAt
     location
-    compensation
+    pay
     description
     title
+    type
   }
 }`
 

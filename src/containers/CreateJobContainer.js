@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { withRouter } from 'react-router-dom';
 import { graphql } from 'react-apollo';
+import { ControlLabel } from 'react-bootstrap';
 import gql from 'graphql-tag';
 import places from 'places.js';
 
@@ -9,6 +10,7 @@ class CreateJobContainer extends Component {
     super(props);
     this.state = {
       title: '',
+      type: '',
       description: '',
       cityName: '',
       location: {
@@ -17,14 +19,8 @@ class CreateJobContainer extends Component {
         lng: '',
         name: ''
       },
-      compensation: ''
+      pay: 0.00
     }
-  }
-
-  _createJob = () => {
-    const { title, description, location, compensation } = this.state;
-    this.props.createJob({ title, description, location, compensation })
-      .then(() => this.props.history.push('/'));
   }
 
   componentDidMount() {
@@ -36,6 +32,7 @@ class CreateJobContainer extends Component {
     let placesAutocomplete = places(options);
     placesAutocomplete.on('change', function resultSelected(e) {
       _this.setState({
+        cityName: e.suggestion.value,
         location: {
           country: e.suggestion.country,
           lat: e.suggestion.latlng.lat,
@@ -46,37 +43,90 @@ class CreateJobContainer extends Component {
     });
   }
 
+  _createJob = () => {
+    const {
+      title,
+      type,
+      description,
+      location,
+      pay
+    } = this.state;
+
+    this.props.createJob({
+      title,
+      type,
+      description,
+      location,
+      pay
+    }).then(() => this.props.history.push('/'));
+  }
+
+  _handleChange = (e) => {
+    let st = {};
+    st[e.target.name] = e.target.name === 'pay' ? parseFloat(e.target.value) : e.target.value;
+    this.setState(st);
+  }
+
   render() {
     return (
       <div className='w-100 pa4 flex justify-center'>
         <div style={{ maxWidth: 400 }} className=''>
+          <ControlLabel>Title</ControlLabel>
           <input
             className='w-100 pa3 mv2'
+            name='title'
             value={this.state.title}
-            placeholder='Title'
-            onChange={(e) => this.setState({title: e.target.value})}
+            onChange={this._handleChange}
           />
-          <input
+
+          <ControlLabel>Type</ControlLabel>
+          <div className="mb3">
+            <input
+              type='radio'
+              name='type'
+              value={'hourly'}
+              onChange={this._handleChange}
+            /> Hourly
+          </div>
+          <div className="mb3">
+            <input
+              type='radio'
+              name='type'
+              value={'fixed'}
+              onChange={this._handleChange}
+            /> Fixed
+          </div>
+
+          <ControlLabel>Descripton</ControlLabel>
+          <textarea
             className='w-100 pa3 mv2'
+            name='description'
+            rows={10}
             value={this.state.description}
-            placeholder='Description'
-            onChange={(e) => this.setState({description: e.target.value})}
+            onChange={this._handleChange}
           />
+
+          <ControlLabel>Location</ControlLabel>
           <input
             id='address-input'
             className='w-100 pa3 mv2'
             type='search'
+            name='cityName'
             value={this.state.cityName}
-            placeholder='City'
-            onChange={(e) => this.setState({cityName: e.target.value})}
+            onChange={this._handleChange}
           />
+
+          <ControlLabel>Pay</ControlLabel>
           <input
             className='w-100 pa3 mv2'
-            value={this.state.compensation}
-            placeholder='Compensation'
-            onChange={(e) => this.setState({compensation: e.target.value})}
+            type='number'
+            step='0.01'
+            name='pay'
+            value={this.state.pay}
+            onChange={this._handleChange}
           />
-          {this.state.title && this.state.description && this.state.compensation && this.state.location &&
+
+          {this.state.title && this.state.pay && this.state.location &&
             <button className='pa3 bg-black-10 bn dim ttu pointer' onClick={this._createJob}>Create Job</button>
           }
         </div>
@@ -86,22 +136,47 @@ class CreateJobContainer extends Component {
 }
 
 const addMutation = gql`
-  mutation createJob($title: String!, $description: String!, $location: Json, $compensation: String!) {
-    createJob(title: $title, description: $description, location: $location, compensation: $compensation) {
+  mutation createJob(
+    $title: String!,
+    $type: String!,
+    $description: String!,
+    $location: Json,
+    $pay: Float!
+  ) {
+    createJob(
+      title: $title,
+      type: $type,
+      description: $description,
+      location: $location,
+      pay: $pay
+    ) {
       id
       title
+      type
       description
       location
-      compensation
+      pay
     }
   }
 `
 
 export default graphql(addMutation, {
   props: ({ ownProps, mutate }) => ({
-    createJob: ({ title, description, location, compensation }) =>
+    createJob: ({
+      title,
+      type,
+      description,
+      location,
+      pay
+    }) =>
       mutate({
-        variables: { title, description, location, compensation },
+        variables: {
+          title,
+          type,
+          description,
+          location,
+          pay
+        },
       })
   })
 })(withRouter(CreateJobContainer));
