@@ -3,10 +3,11 @@ import { Row, Col, ListGroup } from 'react-bootstrap';
 import { graphql } from 'react-apollo';
 import gql from 'graphql-tag';
 import { Hits } from 'react-instantsearch/dom';
-import SearchBox from '../components/SearchBox';
-import Job from '../components/Job';
+import SearchBox from '../SearchBox';
+import Job from '../Job';
+import './styles.css';
 
-class JobListContainer extends Component {
+class JobList extends Component {
   _renderPosts = () => {
     if (this.props.data.allJobs.length === 0) {
       return (
@@ -51,4 +52,4 @@ const JobQuery = gql`query job {
   }
 }`
 
-export default graphql(JobQuery)(JobListContainer);
+export default graphql(JobQuery)(JobList);

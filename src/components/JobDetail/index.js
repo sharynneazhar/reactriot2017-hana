@@ -16,6 +16,25 @@ class JobDetail extends Component {
     return 'Contact job poster for location';
   }
 
+  _getContact = () => {
+    const job = this.props.location.query.job;
+    let contact = 'Contact: ';
+
+    if (job.contact && job.contact.email) {
+      contact += job.contact.email;
+    }
+
+    if (job.contact && job.contact.email && job.contact.phone) {
+      contact += ' or ';
+    }
+
+    if (job.contact && job.contact.phone) {
+      contact += job.contact.phone;
+    }
+
+    return contact;
+  }
+
   render() {
     const job = this.props.location.query.job;
     return (
@@ -43,6 +62,9 @@ class JobDetail extends Component {
           </Col>
         </Row>
         <div className="desc">{job.description}</div>
+        <div className="contact">
+          {this._getContact()}
+        </div>
       </div>
     );
   }

@@ -4,8 +4,9 @@ import { graphql } from 'react-apollo';
 import { ControlLabel } from 'react-bootstrap';
 import gql from 'graphql-tag';
 import places from 'places.js';
+import './styles.css';
 
-class CreateJobContainer extends Component {
+class CreateJob extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -77,70 +78,84 @@ class CreateJobContainer extends Component {
 
   render() {
     return (
-      <div className='w-100 pa4 flex justify-center'>
-        <div style={{ maxWidth: 400 }} className=''>
-          <ControlLabel>Title</ControlLabel>
-          <input
-            className='w-100 pa3 mv2'
-            name='title'
-            value={this.state.title}
-            onChange={this._handleChange}
-          />
+      <div className='w-200 pa4 flex justify-center'>
+        <div className='form-container'>
 
-          <ControlLabel>Type</ControlLabel>
-          <div className="mb3">
+          <div className=''>
+            <ControlLabel>Title</ControlLabel>
             <input
-              type='radio'
-              name='type'
-              value={'hourly'}
+              className='w-100 pa3 mv2'
+              name='title'
+              value={this.state.title}
+              maxLength={80}
               onChange={this._handleChange}
-            /> Hourly
-          </div>
-          <div className="mb3">
-            <input
-              type='radio'
-              name='type'
-              value={'fixed'}
-              onChange={this._handleChange}
-            /> Fixed
+            />
           </div>
 
-          <ControlLabel>Descripton</ControlLabel>
-          <textarea
-            className='w-100 pa3 mv2'
-            name='description'
-            rows={10}
-            value={this.state.description}
-            onChange={this._handleChange}
-          />
+          <div className=''>
+            <ControlLabel>Type</ControlLabel>
+            <div className="mb3">
+              <input
+                type='radio'
+                name='type'
+                value={'hourly'}
+                onChange={this._handleChange}
+              /> Hourly
+            </div>
+            <div className="mb3">
+              <input
+                type='radio'
+                name='type'
+                value={'fixed'}
+                onChange={this._handleChange}
+              /> Fixed
+            </div>
+          </div>
 
-          <ControlLabel>Location</ControlLabel>
-          <input
-            id='address-input'
-            className='w-100 pa3 mv2'
-            type='search'
-            name='cityName'
-            value={this.state.cityName}
-            onChange={this._handleChange}
-          />
+          <div className=''>
+            <ControlLabel>Descripton</ControlLabel>
+            <textarea
+              className='w-100 pa3 mv2'
+              name='description'
+              rows={10}
+              value={this.state.description}
+              onChange={this._handleChange}
+            />
+          </div>
 
-          <ControlLabel>Pay</ControlLabel>
-          <input
-            className='w-100 pa3 mv2'
-            type='number'
-            step='0.01'
-            name='pay'
-            value={this.state.pay}
-            onChange={this._handleChange}
-          />
+          <div className=''>
+            <ControlLabel>Location</ControlLabel>
+            <input
+              id='address-input'
+              className='w-100 pa3 mv2'
+              type='search'
+              name='cityName'
+              value={this.state.cityName}
+              onChange={this._handleChange}
+            />
+          </div>
 
-          <ControlLabel>Email</ControlLabel>
-          <input
-            className='w-100 pa3 mv2'
-            type='search'
-            value={this.state.contact.email}
-            onChange={(e) => this.setState({ contact: { email: e.target.value }})}
-          />
+          <div className=''>
+            <ControlLabel>Pay</ControlLabel>
+            <input
+              className='w-100 pa3 mv2'
+              type='number'
+              step='0.01'
+              name='pay'
+              value={this.state.pay}
+              onChange={this._handleChange}
+            />
+          </div>
+
+          <div className=''>
+            <ControlLabel>Email</ControlLabel>
+            <input
+              className='w-100 pa3 mv2'
+              type='search'
+              value={this.state.contact.email}
+              onChange={(e) => this.setState({ contact: { email: e.target.value }})}
+            />
+          </div>
 
           <button className='pa3 bg-black-10 bn dim ttu pointer' onClick={this._createJob}>Create Job</button>
         </div>
@@ -198,4 +213,4 @@ export default graphql(addMutation, {
         },
       })
   })
-})(withRouter(CreateJobContainer));
+})(withRouter(CreateJob));

@@ -5,9 +5,9 @@ import ApolloClient, { createNetworkInterface } from 'apollo-client';
 import { ApolloProvider } from 'react-apollo';
 import registerServiceWorker from './utils/registerServiceWorker';
 
-import App from './containers/App';
-import JobListContainer from './containers/JobListContainer';
-import CreateJobContainer from './containers/CreateJobContainer';
+import App from './components/App';
+import JobList from './components/JobList';
+import CreateJob from './components/CreateJob';
 import JobDetail from './components/JobDetail';
 
 const networkInterface = createNetworkInterface({
@@ -22,8 +22,8 @@ ReactDOM.render(
   <ApolloProvider client={client}>
     <HashRouter>
       <App>
-        <Route exact path='/' component={JobListContainer} />
-        <Route exact path='/create' component={CreateJobContainer} />
+        <Route exact path='/' component={JobList} />
+        <Route exact path='/create' component={CreateJob} />
         <Route exact path='/job/:job' component={JobDetail} />
       </App>
     </HashRouter>

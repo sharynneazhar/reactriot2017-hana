@@ -38,6 +38,7 @@
 
 .job-detail .desc {
   margin-top: 20px;
+  margin-bottom: 30px;
   font-size: 16px;
 }
 
@@ -57,4 +58,8 @@
   padding: 20px;
   padding-left: 40px;
   border-right: 1px solid var(--pattens-blue);
+}
+
+.job-detail .contact {
+  font-style: italic;
 }

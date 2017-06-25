@@ -1,0 +1,13 @@
+.form-container {
+  max-width: 500px;
+}
+
+.form-grp {
+  margin-bottom: 15px;
+}
+
+.radio-grp {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
