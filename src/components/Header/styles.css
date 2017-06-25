@@ -2,6 +2,9 @@
   display: flex;
   align-items: center;
   height: 85px;
+  width: 100%;
+  margin-right: 0;
+  margin-left: 0;
   margin-bottom: 50px;
   padding: 20px 80px;
   background-color: #FFF;

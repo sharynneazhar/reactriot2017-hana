@@ -1,5 +1,5 @@
 .job-container {
-  padding: 20px 15px;
+  padding: 15px;
   border: none;
   border-radius: 0;
   color: #888;
@@ -7,6 +7,14 @@
 
 .job-container:not(:last-child) {
   border-bottom: 2px solid var(--pattens-blue);
+}
+
+.job-row {
+  display: flex;
+  align-items: center;
+  font-weight: var(--regular);
+  color: #858F92;
+  padding: 20px;
 }
 
 .job-container .col-md-4 {
@@ -17,13 +25,22 @@
 .job-container .date,
 .job-container .location,
 .job-container .desc {
-  margin-bottom: 15px;
+  margin-bottom: 20px;
+  font-weight: var(--regular);
 }
 
-.job-container .title {
+.job-container .job-row .info .title {
   font-size: 24px;
+  font-weight: var(--semi);
+  font-family: 'Open Sans', sans-serif;
   text-transform: capitalize;
   color: #858F92;
+}
+
+.job-container .desc {
+  margin-top: 15px;
+  margin-bottom: 0;
+  font-size: 14px;
 }
 
 .job-container .date,
@@ -43,12 +60,11 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 20px;
+  padding: 0;
 }
 
 .job-container .info {
-  padding: 20px;
-  padding-left: 40px;
+  padding: 20px 40px;
   border-right: 1px solid var(--pattens-blue);
 }
 
@@ -59,7 +75,6 @@
 }
 
 .job-container .compensation .pay {
-  margin-left: -12px;
   font-size: 60px;
   font-weight: var(--semi);
   line-height: 72px;

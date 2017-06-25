@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { withRouter } from 'react-router-dom';
 import { ListGroupItem, Row, Col, Glyphicon } from 'react-bootstrap';
+import LinesEllipsis from 'react-lines-ellipsis'
 import moment from 'moment'
 import './styles.css';
 
@@ -22,7 +23,7 @@ class Job extends Component {
 
     return (
       <ListGroupItem className="job-container" onClick={this._getDetail}>
-        <Row>
+        <Row className="job-row">
           <Col md={8} className="info">
             <div className="title">{job.title}</div>
             <Row>
@@ -39,7 +40,14 @@ class Job extends Component {
                 </div>
               </Col>
             </Row>
-            <div className="desc">{job.description}</div>
+            <LinesEllipsis
+              className="desc"
+              text={job.description}
+              maxLine='3'
+              ellipsis='...'
+              trimRight
+              basedOn='letters'
+            />
           </Col>
           <Col md={4} className="compensation">
             <div className="type">{job.type}</div>

@@ -19,6 +19,7 @@
     "react-bootstrap": "^0.31.0",
     "react-dom": "^15.6.1",
     "react-instantsearch": "^4.0.4",
+    "react-lines-ellipsis": "^0.6.1",
     "react-router-dom": "^4.1.1",
     "tachyons": "^4.7.4"
   },
