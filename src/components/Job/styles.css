@@ -5,6 +5,11 @@
   color: #888;
 }
 
+.ais-Hits__root {
+  display: flex;
+  flex-direction: column;
+}
+
 .ais-Hits__root button {
   border: none !important;
   border-radius: 0 !important;
